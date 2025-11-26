@@ -2,18 +2,20 @@ export interface Task {
   id: number;
   title: string;
   desc: string;
-  department: string;
-  date: string;
-  empName: string;
+  department: 'MARKETING' | 'DEVELOPMENT' | 'RESOURCES';
+  startDate: string;
+  endDate: string;
+  empName: "1" | '2' | '3';
   links?: number;
   messages?: number;
-  badge: string;
-  ColId: string;
+  priority: "1" | '2' | '3';
+  status: 'TODO' | 'INPROGRESS' | 'COMPLETE' | 'PENDING';
+  project? : '1'| '2' | '3'
+  file? :string
 }
 
 export interface Column {
-  id: string;
+  id: 'TODO' | 'INPROGRESS' | 'COMPLETE' | 'PENDING';
   colTitle: string;
   color: string;
-  tasks: Task[];
 }

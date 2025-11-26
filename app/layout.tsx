@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import AppSidebar from "@/components/Sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { cookies } from "next/headers";
+import { ToastContainer } from 'react-toastify'
 
 
 const geistSans = Geist({
@@ -42,6 +43,8 @@ export default async function RootLayout({
               <div className="px-4 pb-8">{children}</div>
             </main>
           </SidebarProvider>
+
+          <ToastContainer position='top-right'/>
       </body>
     </html>
   );

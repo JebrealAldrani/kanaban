@@ -1,32 +1,20 @@
-import z from "zod";
+import {z} from "zod";
 
 export const formSchema = z.object({
-  title: z.string().min(3, {message: "العنوان مطلوب"}),
-  desc: z.string().min(1, {message: "وصف المهمة مطلوب"}),
-  project: z.enum(["1", "2", '3'], {
-    message: "الرجاء اختيار المشروع",
+  title: z.string().min(3, { error: "العنوان مطلوب" }),
+  desc: z.string().min(1, { error: "وصف المهمة مطلوب" }),
+  project: z.enum(["1", "2", "3"]).optional(),
+  department: z.enum(["MARKETING", "DEVELOPMENT", "RESOURCES"], {
+    error: "الرجاء اختيار القسم",
   }),
-  department: z.enum(["قسم البرمجة", "قسم المحاسبة", "قسم الموارد البشرية"], {
-    message: "الرجاء اختيار المشروع",
-  }),
-  empName: z.enum(['1', '2', '3'], {
-    message: "الرجاء اختيار المسؤول",
-  }),
-  badge: z.enum(['3', '1', '2'], {
-    message: "الرجاء اختيار المسؤول",
-  }),
-  startDate: z.date({message: 'قم باختيار تاريخ بدأ المهمة'}),
-  startEnd: z.date({message: 'قم باختيار تاريخ انتهاء المهمة'}),
-  status: z.enum(['قيد التنفيذ', 'معلقة', 'منتهية'], {
-    message: 'قم باختيار حالة المهمة',
+  empName: z.enum(["1", "2", "3"], { error: "الرجاء اختيار المسؤول" }),
+  priority: z.enum(["1", "2", "3"], { error: "الرجاء اختيار الأولوية" }),
+  startDate: z.date({ error: "قم باختيار تاريخ بدأ المهمة" }),
+  endDate: z.date({ error: "قم باختيار تاريخ انتهاء المهمة" }),
+  status: z.enum(["TODO", "INPROGRESS", "COMPLETE", "PENDING"], {
+    message: "قم باختيار حالة المهمة",
   }),
   file: z
-      .any()
-      .refine(
-        (file) =>
-          typeof window === "undefined" ||
-          file instanceof FileList ||
-          file instanceof File,
-        "Invalid file",
-      ),
+  .string({ error: "الملف مطلوب" })
+  .optional() // optional if the field is not always required
 });

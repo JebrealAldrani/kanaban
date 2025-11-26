@@ -1,4 +1,4 @@
-
+import { Column, Task } from "@/types/interfaces";
 import {
   LayoutDashboard,
   Briefcase,
@@ -123,157 +123,159 @@ export const INFO_CARDS = [
     icon: CircleAlert,
     color: "#2563EB",
     bg: "#DBEAFE",
-    count: 1
+    count: 1,
   },
   {
     title: "قيد التنفيذ",
     icon: Clock4,
     color: "#D97706",
     bg: "#FEF3C7",
-    count: 1
+    count: 1,
   },
   {
     title: "مكتملة",
     icon: Check,
     color: "#16A34A",
     bg: "#DCFCE7",
-    count: 3
+    count: 3,
   },
   {
     title: "متوقفة",
     icon: CircleAlert,
     color: "#DC2626",
     bg: "#FEE2E2",
-    count: 5
+    count: 5,
   },
 ];
 
 export const FILTERS = [
-    {
-        title: 'مهامي',
-        icon: User
-    },
-    {
-        title: 'القسم',
-        icon: Funnel
-    },
-    {
-        title: 'الأولوية',
-        icon: Funnel
-    },
-    {
-        title: 'الحالة',
-        icon: Funnel
-    },
-    {
-        title: 'المشروع',
-        icon: Funnel
-    },
-    {
-        title: 'المسؤول',
-        icon: Funnel
-    },
-]
+  {
+    title: "مهامي",
+    icon: User,
+  },
+  {
+    title: "القسم",
+    icon: Funnel,
+  },
+  {
+    title: "الأولوية",
+    icon: Funnel,
+  },
+  {
+    title: "الحالة",
+    icon: Funnel,
+  },
+  {
+    title: "المشروع",
+    icon: Funnel,
+  },
+  {
+    title: "المسؤول",
+    icon: Funnel,
+  },
+];
 
-export const TASKS = [
+export const TASKS: Task[] = [
   {
-    colTitle: 'للتنفيذ',
-    id: 'c1',
-    color: '#3B82F6',
-    tasks: [
-      {
-        id: 1,
-        title: 'إنشاء خطة التسويق',
-        desc: 'وضع استراتيجية تسويق للمنتج الجديد',
-        department: 'حملة تسويقية للمنتج الجديد',
-        date: '20/11/2025',
-        links: 3,
-        messages: 0,
-        empName: 'نور محمد',
-        badge: 'متوسط',
-        ColId: 'c1',
-      }
-    ]
-  },
-{
-    colTitle: 'قيد التنفيذ',
-    id: 'c2',
-    color: '#F59E0B',
-    tasks: [
-      {
-        id: 2,
-        title: 'الرئيسية',
-        desc: ' للتكامل مع……الواجهة الأمامية',
-        department: 'تطوير الموقع الإلكتروني',
-        date: ' 20/11/2025',
-        links: 1,
-        messages: 3,
-        empName: 'محمد علي',
-        badge: 'عالية',
-        ColId: 'c2',
-      },
-    ]
+    id: 1,
+    title: "إنشاء خطة التسويق",
+    desc: "وضع استراتيجية تسويق للمنتج الجديد",
+    department: 'MARKETING',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 3,
+    messages: 0,
+    empName: '1',
+    priority: '2',
+    status: "TODO",
   },
   {
-    colTitle: 'مكتملة',
-    id: 'c3',
-    color: '#22C55E',
-    tasks: [
-      {
-        id: 3,
-        title: 'تصميم الواجهة الرئيسية',
-        desc: ' للصفحة الرئيسية……',
-        department: 'تطوير الموقع الإلكتروني',
-        date: ' 20/11/2025',
-        links: 2,
-        messages: 5,
-        empName: 'سارة أحمد',
-        badge: 'عالية',
-        ColId: 'c3',
-      },
-      {
-        id: 4,
-        title: 'إنشاء قاعدة البيانات',
-        desc: 'تصميم وتنفيذ قاعدة بيانات للمشروع',
-        department: 'تطوير نظام إدارة المخزون',
-        date: '20/11/2025',
-        links: 0,
-        messages: 2,
-        empName: 'علي أحمد',
-        badge: 'متوسط',
-        ColId: 'c3',
-      },
-      {
-        id: 5,
-        title: 'تحديد متطلبات المستخدمين',
-        desc: 'تصميم وتنفيذ قاعدة بيانات للمشروع',
-        department: 'تطوير نظام إدارة المخزون',
-        date: '20/11/2025',
-        links: 0,
-        messages: 2,
-        empName: 'علي أحمد',
-        badge: 'منخفض',
-        ColId: 'c3'
-      },
-    ]
+    id: 2,
+    title: "الرئيسية",
+    desc: " للتكامل مع……الواجهة الأمامية",
+    department: 'DEVELOPMENT',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 1,
+    messages: 3,
+    empName: '1',
+    priority: '1',
+    status: "INPROGRESS",
   },
   {
-    colTitle: 'قيد التنفيذ',
-    id: 'c4',
-    color: '#EF4444',
-    tasks: [
-      {
-        id: 6,
-        title: 'إعداد مواد التدريب',
-        desc: 'إعداد المستندات والعروض التقديمية للتدريب',
-        department: 'تدريب الموظفين الجدد',
-        date: ' 20/11/2025',
-        links: 5,
-        messages: 2,
-        empName: 'محمد علي',
-        badge: 'عالية',
-        ColId: 'c4'
-      },
-    ]
+    id: 3,
+    title: "تصميم الواجهة الرئيسية",
+    desc: " للصفحة الرئيسية……",
+    department: 'DEVELOPMENT',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 2,
+    messages: 5,
+    empName: '3',
+    priority: '1',
+    status: "COMPLETE",
   },
-]
+  {
+    id: 4,
+    title: "إنشاء قاعدة البيانات",
+    desc: "تصميم وتنفيذ قاعدة بيانات للمشروع",
+    department: 'DEVELOPMENT',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 0,
+    messages: 2,
+    empName: '2',
+    priority: '2',
+    status: "COMPLETE",
+  },
+  {
+    id: 5,
+    title: "تحديد متطلبات المستخدمين",
+    desc: "تصميم وتنفيذ قاعدة بيانات للمشروع",
+    department: 'DEVELOPMENT',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 0,
+    messages: 2,
+    empName: '2',
+    priority: '3',
+    status: "COMPLETE",
+  },
+  {
+    id: 6,
+    title: "إعداد مواد التدريب",
+    desc: "إعداد المستندات والعروض التقديمية للتدريب",
+    department: 'RESOURCES',
+    startDate: "20/11/2025",
+    endDate: "25/11/2025",
+    links: 5,
+    messages: 2,
+    empName: '1',
+    priority: '1',
+    status: "PENDING",
+  },
+  
+];
+
+export const COLUMNS: Column[] = [
+  {
+    colTitle: "للتنفيذ",
+    id: "TODO",
+    color: "#3B82F6",
+  },
+  {
+    colTitle: "قيد التنفيذ",
+    id: "INPROGRESS",
+    color: "#F59E0B",
+  },
+  {
+    colTitle: "مكتملة",
+    id: "COMPLETE",
+    color: "#22C55E",
+  },
+  {
+    colTitle: "متوقفة",
+    id: "PENDING",
+    color: "#EF4444",
+  },
+];
